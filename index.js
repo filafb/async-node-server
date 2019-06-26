@@ -23,6 +23,7 @@ if(cluster.isMaster) {
     for(let i = 0; i < Number(req.params.id); i++){
       continue
     }
+    console.log(`request to /${req.params.id} done`)
     res.send(`done ${req.params.id}`)
   })
 
