@@ -7,11 +7,13 @@ app.get('/:id', (req, res, next) => {
   const loop = fork("./loop.js")
   loop.send({id: Number(req.params.id)})
   loop.on('exit', () => {
+    console.log(`request to /${req.params.id} done`)
     res.send(`done ${req.params.id}`)
   })
 })
 
 app.listen(3000, () => console.log('listening'))
+
 
 
 
