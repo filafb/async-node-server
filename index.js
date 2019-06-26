@@ -11,6 +11,7 @@ app.get('/:id', (req, res, next) => {
       console.log(`${message} received from worker`)
     })
     worker.on('exit', () => {
+      console.log(`request to /${req.params.id} done`)
       res.send(`done ${req.params.id}`)
     })
   }
